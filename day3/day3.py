@@ -7,6 +7,8 @@ from util import file_line_reader
 class EnginePartNumberAdder:
     '''
     Uses puzzle input path to find engine part numbers that are touching a symbol and sums them together.
+    Calculates gear ratios by multiplying the numbers that are touching a star symbol, if there are exactly 2 numbers.
+    Sums the gear ratios together for part 2 puzzle.
     The whole assignment description can be found in assignment3.md.
     '''
     def __init__(self, puzzle_input_path):
@@ -138,7 +140,7 @@ class EnginePartNumberAdder:
             self.current_line_numbers_without_symbol = {}
             self.past_line_symbols = self.current_line_symbols
             self.current_line_symbols = {}
-            
+
         # calculate gear ratios for part 2 assignment
         #print('self.star_touching_numbers', self.star_touching_numbers)
         self.calculate_gear_ratios()
